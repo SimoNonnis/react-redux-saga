@@ -74,7 +74,7 @@
     "jest": "^16.0.2",
     "normalize.css": "^5.0.0",
     "postcss-cssnext": "^2.8.0",
-    "postcss-easy-import": "^1.0.1",
+    "postcss-easy-import": "^1.0.1", 
     "postcss-loader": "^1.1.0",
     "postcss-reporter": "^1.4.1",
     "react-addons-test-utils": "^15.3.2",
