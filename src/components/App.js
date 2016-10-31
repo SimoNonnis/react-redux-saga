@@ -1,14 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
-import styles from './app.css';
+
+import Button from './Button';
+import User from './User';
+
+import styles from './App.css';
 
 
-const App = () => (
-  <div>
-      <h1 className='global-css' styleName='title bar'>React + Webpack Boilerplate</h1>
-      <p>Let's start coding</p>
-  </div>
-);
+class App extends Component {
+  constructor() {
+    super();
+
+    this.getUser = this.getUser.bind(this);
+
+    this.state = {
+      user: {}
+    }
+  }
+
+  getUser () {
+    const URL = 'http://uinames.com/api/?ext';
+
+    fetch(URL)
+      .then(response => response.json())
+      .then(user => (
+        this.setState({
+          user: user
+        })
+      ))
+  }
+
+  render () {
+    return (
+      <div styleName='container'>
+          <h1 styleName='title'>Redux Saga</h1>
+          <Button  getUser={this.getUser}/>
+          <User userInfo={this.state.user}/>
+      </div>
+    )
+  }
+}
 
 
 

@@ -5,6 +5,8 @@
 
 
 :root {
-  --mainColor: greenyellow;
-  --mobileColor: orangered;
+  --mainColor: #56b9e6;
+  --orange: orangered;
+  --light: #f0f0f1;
+  --grey: #a7a7a7;
 }

@@ -1,0 +1,10 @@
+@import './css-shared/variables.css';
+
+.container {
+  margin: 2em auto;
+  padding: 2em 1em;
+  background-color: var(--light);
+  border: 1px solid var(--grey);
+  border-radius: 3px;
+  max-width: 400px;
+}

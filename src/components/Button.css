@@ -1,0 +1,9 @@
+@import './css-shared/variables.css';
+
+.button {
+  padding: 1em 2em;
+  background-color: var(--light);
+  border-radius: 3px;
+  margin-top: 2em;
+  border: 1px solid var(--grey);
+}
