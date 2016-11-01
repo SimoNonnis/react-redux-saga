@@ -14,7 +14,8 @@ class App extends Component {
     this.getUser = this.getUser.bind(this);
 
     this.state = {
-      user: {}
+      user: {},
+      empty: true
     }
   }
 
@@ -25,7 +26,8 @@ class App extends Component {
       .then(response => response.json())
       .then(user => (
         this.setState({
-          user: user
+          user: user,
+          empty: false
         })
       ))
   }
@@ -35,7 +37,7 @@ class App extends Component {
       <div styleName='container'>
           <h1 styleName='title'>Redux Saga</h1>
           <Button  getUser={this.getUser}/>
-          <User userInfo={this.state.user}/>
+          {this.state.empty ? null : <User userInfo={this.state.user}/>}
       </div>
     )
   }

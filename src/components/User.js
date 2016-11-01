@@ -8,16 +8,17 @@ const User = ({userInfo}) => {
     photo,
     name,
     surname,
-    gender,
+    email,
     region
   } = userInfo;
 
   return (
     <div styleName='container'>
-      <img src={photo} alt={name}/>
-        <h1>{name} {surname}</h1>
-        <p>{gender}</p>
+      <img src={photo} alt={name} styleName='avatar' />
+        <h1 styleName='fullName'>{name} {surname}</h1>
         <p>{region}</p>
+        <p>{email}</p>
+
     </div>
   )
 }
