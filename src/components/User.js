@@ -3,14 +3,14 @@ import CSSModules from 'react-css-modules';
 
 import styles from './User.css';
 
-const User = ({userInfo}) => {
+const User = ({user}) => {
   const {
     photo,
     name,
     surname,
     email,
     region
-  } = userInfo;
+  } = user;
 
   return (
     <div styleName='container'>
@@ -27,7 +27,7 @@ const User = ({userInfo}) => {
 
 
 User.propTypes = {
-  userInfo: PropTypes.object
+  user: PropTypes.object
 }
 
 export default CSSModules(User, styles, { allowMultiple: true });
