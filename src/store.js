@@ -1,10 +1,17 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import createSagaMiddleware from 'redux-saga';
+
 import rootReducer from './reducers/rootReducer';
+import * as sagas from './sagas';
 
-const reduxDevTools = compose(
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+
+
+let store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(createSagaMiddleware(...sagas)),
+    window.devToolsExtension && window.devToolsExtension()
+  )
 );
-
-let store = createStore(rootReducer, reduxDevTools);
 
 export default store;
