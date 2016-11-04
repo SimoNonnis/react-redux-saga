@@ -7,6 +7,12 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'GET_USER':
       return state
+    case 'SET_USER':
+      return {
+        ...state,
+        user: action.payload,
+        empty: false
+      }
     default:
       return state
   }
