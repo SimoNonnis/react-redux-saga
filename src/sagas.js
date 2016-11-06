@@ -1,13 +1,15 @@
-import { take, call, put }  from 'redux-saga/effects';
+import { takeLatest }  from 'redux-saga';
+import { call, put }  from 'redux-saga/effects';
 
-import { GET_USER, setUser } from './actions/actionCreators';
+import * as actions from './actions/actionCreators';
 
-export default function * watchFetchUser () {
-  console.log('Inside saga');
-  yield take(GET_USER);
-  console.log('Received click');
+function * setUser () {
   const URL = 'http://uinames.com/api/?ext';
   const user = yield call(fetch, URL);
   const userToJson = yield user.json();
-  yield  put(setUser(userToJson))
+  yield  put(actions.setUser(userToJson));
+}
+
+export default function * watchFetchUser() {
+  yield takeLatest('GET_USER', setUser)
 }

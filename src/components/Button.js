@@ -5,7 +5,7 @@ import styles from './Button.css';
 
 const Button = ({ getUser }) => {
   function handleClick() {
-    getUser
+    getUser()
   }
 
   return (

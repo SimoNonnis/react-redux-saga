@@ -7,18 +7,19 @@ import User from './User';
 import styles from './App.css';
 
 
-const App = ({empty}) => {
-  return (
-    <div styleName='container'>
-        <h1 styleName='title'>Redux Saga</h1>
-        <Button/>
-        {empty ? null : <User />}
-    </div>
-  )
-};
+const App = ({empty, getUser, user}) => (
+  <div styleName='container'>
+      <h1 styleName='title'>Redux Saga</h1>
+      <Button getUser={getUser}/>
+      {empty ? null : <User user={user} />}
+  </div>
+)
+
 
 App.propTypes = {
-  empty: PropTypes.bool
+  empty: PropTypes.bool,
+  getUser: PropTypes.func,
+  user: PropTypes.object
 }
 
 
